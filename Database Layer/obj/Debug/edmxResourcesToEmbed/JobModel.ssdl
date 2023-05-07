@@ -1,0 +1,693 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JobPortalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AccountStatus">
+    <Key>
+      <PropertyRef Name="AccountStatusID" />
+    </Key>
+    <Property Name="AccountStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccountStatus" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Certificate">
+    <Key>
+      <PropertyRef Name="CertificateId" />
+    </Key>
+    <Property Name="CertificateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CertificateName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CertificateAuthority" Type="nvarchar" MaxLength="50" />
+    <Property Name="LevelCertificate" Type="nvarchar" MaxLength="50" />
+    <Property Name="FromYear" Type="date" />
+    <Property Name="EmployeeId" Type="int" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="CompanyId" />
+    </Key>
+    <Property Name="CompanyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="Logo" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CurrentJobSatus">
+    <Key>
+      <PropertyRef Name="CurrentJobStatusId" />
+    </Key>
+    <Property Name="CurrentJobStatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CurrentJobStatus" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Education">
+    <Key>
+      <PropertyRef Name="EducationId" />
+    </Key>
+    <Property Name="EducationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Institute" Type="nvarchar" MaxLength="50" />
+    <Property Name="TitleOfEducation" Type="nvarchar" MaxLength="50" />
+    <Property Name="Degree" Type="nvarchar" MaxLength="50" />
+    <Property Name="FromYear" Type="date" />
+    <Property Name="ToYear" Type="date" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="CountryId" Type="int" />
+    <Property Name="EmpoyeeId" Type="int" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Employeed" />
+    </Key>
+    <Property Name="Employeed" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobCategoryId" Type="int" />
+    <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOB" Type="date" />
+    <Property Name="CNIC" Type="varchar" MaxLength="50" />
+    <Property Name="FNC" Type="varchar" MaxLength="50" />
+    <Property Name="FatherName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CountryId" Type="int" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Photo" Type="nvarchar(max)" />
+    <Property Name="Qualification" Type="nvarchar" MaxLength="50" />
+    <Property Name="PermanentAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="CurrentJobStatusId" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="Reference" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EventTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="EventDate" Type="datetime" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="Location" Type="nvarchar" MaxLength="50" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="EventContactDetails" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="EventBanner" Type="nvarchar(max)" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <EntityType Name="Experience">
+    <Key>
+      <PropertyRef Name="ExperienceId" />
+    </Key>
+    <Property Name="ExperienceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Company" Type="nvarchar" MaxLength="50" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="CountryID" Type="int" />
+    <Property Name="FromYear" Type="date" />
+    <Property Name="ToYear" Type="date" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmployeeId" Type="int" />
+  </EntityType>
+  <EntityType Name="JobApply">
+    <Key>
+      <PropertyRef Name="JobAppliedId" />
+    </Key>
+    <Property Name="JobAppliedId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeId" Type="int" />
+    <Property Name="JobApplyDateTime" Type="date" />
+    <Property Name="JobApplyStatusId" Type="int" />
+    <Property Name="JobApplyStatusUpdatedDate" Type="date" />
+    <Property Name="JobApplyStatusUpdatedReason" Type="nvarchar" MaxLength="50" />
+    <Property Name="PostJobId" Type="int" />
+  </EntityType>
+  <EntityType Name="JobApplyStatus">
+    <Key>
+      <PropertyRef Name="JobApplyStatusId" />
+    </Key>
+    <Property Name="JobApplyStatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobApplyStatus" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="JobCategory">
+    <Key>
+      <PropertyRef Name="JobCategoryId" />
+    </Key>
+    <Property Name="JobCategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobCategory" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Jobs">
+    <Key>
+      <PropertyRef Name="JobId" />
+    </Key>
+    <Property Name="JobId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="JobRequirement" Type="nvarchar" MaxLength="50" />
+    <Property Name="JobDetail" Type="nvarchar" MaxLength="50" />
+    <Property Name="JobCategoryId" Type="int" />
+  </EntityType>
+  <EntityType Name="JobStatus">
+    <Key>
+      <PropertyRef Name="JobStatusId" />
+    </Key>
+    <Property Name="JobStatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobStatus" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="LanguageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LanguageName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Proficiency" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmployeeId" Type="int" />
+  </EntityType>
+  <EntityType Name="PostJob">
+    <Key>
+      <PropertyRef Name="PostJobId" />
+    </Key>
+    <Property Name="PostJobId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="JobId" Type="int" />
+    <Property Name="RquiredPerson" Type="int" />
+    <Property Name="Qualification" Type="nvarchar" MaxLength="50" />
+    <Property Name="ManimumExperience" Type="int" />
+    <Property Name="AgeLimit" Type="int" />
+    <Property Name="MarriedStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="StartDate" Type="nchar" MaxLength="10" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="ShortlistDate" Type="date" />
+    <Property Name="InterviewDate" Type="date" />
+    <Property Name="JobStatusId" Type="int" />
+    <Property Name="Desctription" Type="nvarchar" MaxLength="50" />
+    <Property Name="JobCategoryId" Type="int" />
+  </EntityType>
+  <EntityType Name="Skill">
+    <Key>
+      <PropertyRef Name="SkillId" />
+    </Key>
+    <Property Name="SkillId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SkillName" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmployeeId" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserTypeId" Type="int" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="ContactNo" Type="varchar" MaxLength="50" />
+    <Property Name="AccountStatusID" Type="int" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="UserTypeID" />
+    </Key>
+    <Property Name="UserTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserTypeName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Certificate_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Certificate" Type="Self.Certificate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Employeed" />
+      </Principal>
+      <Dependent Role="Certificate">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Company" Type="Self.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Company" Type="Self.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Education_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Education" Type="Self.Education" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="Education">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Education_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Education" Type="Self.Education" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Employeed" />
+      </Principal>
+      <Dependent Role="Education">
+        <PropertyRef Name="EmpoyeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_CurrentJobSatus">
+    <End Role="CurrentJobSatus" Type="Self.CurrentJobSatus" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CurrentJobSatus">
+        <PropertyRef Name="CurrentJobStatusId" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="CurrentJobStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_JobCategory">
+    <End Role="JobCategory" Type="Self.JobCategory" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobCategory">
+        <PropertyRef Name="JobCategoryId" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="JobCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="Event" Type="Self.Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyId" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Event" Type="Self.Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Experience_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Experience" Type="Self.Experience" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="Experience">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Experience_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Experience" Type="Self.Experience" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Employeed" />
+      </Principal>
+      <Dependent Role="Experience">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobApply_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="JobApply" Type="Self.JobApply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Employeed" />
+      </Principal>
+      <Dependent Role="JobApply">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobApply_Employee1">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="JobApply" Type="Self.JobApply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Employeed" />
+      </Principal>
+      <Dependent Role="JobApply">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobApply_JobApplyStatus">
+    <End Role="JobApplyStatus" Type="Self.JobApplyStatus" Multiplicity="0..1" />
+    <End Role="JobApply" Type="Self.JobApply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobApplyStatus">
+        <PropertyRef Name="JobApplyStatusId" />
+      </Principal>
+      <Dependent Role="JobApply">
+        <PropertyRef Name="JobApplyStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobApply_PostJob">
+    <End Role="PostJob" Type="Self.PostJob" Multiplicity="0..1" />
+    <End Role="JobApply" Type="Self.JobApply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostJob">
+        <PropertyRef Name="PostJobId" />
+      </Principal>
+      <Dependent Role="JobApply">
+        <PropertyRef Name="PostJobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Jobs_JobCategory">
+    <End Role="JobCategory" Type="Self.JobCategory" Multiplicity="0..1" />
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobCategory">
+        <PropertyRef Name="JobCategoryId" />
+      </Principal>
+      <Dependent Role="Jobs">
+        <PropertyRef Name="JobCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Language_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Language" Type="Self.Language" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Employeed" />
+      </Principal>
+      <Dependent Role="Language">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PostJob_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="PostJob" Type="Self.PostJob" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyId" />
+      </Principal>
+      <Dependent Role="PostJob">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PostJob_Company1">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="PostJob" Type="Self.PostJob" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyId" />
+      </Principal>
+      <Dependent Role="PostJob">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PostJob_JobCategory">
+    <End Role="JobCategory" Type="Self.JobCategory" Multiplicity="0..1" />
+    <End Role="PostJob" Type="Self.PostJob" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobCategory">
+        <PropertyRef Name="JobCategoryId" />
+      </Principal>
+      <Dependent Role="PostJob">
+        <PropertyRef Name="JobCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PostJob_Jobs">
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="0..1" />
+    <End Role="PostJob" Type="Self.PostJob" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jobs">
+        <PropertyRef Name="JobId" />
+      </Principal>
+      <Dependent Role="PostJob">
+        <PropertyRef Name="JobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PostJob_JobStatus">
+    <End Role="JobStatus" Type="Self.JobStatus" Multiplicity="0..1" />
+    <End Role="PostJob" Type="Self.PostJob" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobStatus">
+        <PropertyRef Name="JobStatusId" />
+      </Principal>
+      <Dependent Role="PostJob">
+        <PropertyRef Name="JobStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PostJob_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="PostJob" Type="Self.PostJob" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="PostJob">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Skill_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Skill" Type="Self.Skill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Employeed" />
+      </Principal>
+      <Dependent Role="Skill">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_AccountStatus">
+    <End Role="AccountStatus" Type="Self.AccountStatus" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountStatus">
+        <PropertyRef Name="AccountStatusID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="AccountStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_UserType">
+    <End Role="UserType" Type="Self.UserType" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserType">
+        <PropertyRef Name="UserTypeID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="UserTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="JobPortalModelStoreContainer">
+    <EntitySet Name="AccountStatus" EntityType="Self.AccountStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Certificate" EntityType="Self.Certificate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CurrentJobSatus" EntityType="Self.CurrentJobSatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Education" EntityType="Self.Education" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Experience" EntityType="Self.Experience" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JobApply" EntityType="Self.JobApply" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JobApplyStatus" EntityType="Self.JobApplyStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JobCategory" EntityType="Self.JobCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Jobs" EntityType="Self.Jobs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JobStatus" EntityType="Self.JobStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Language" EntityType="Self.Language" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PostJob" EntityType="Self.PostJob" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Skill" EntityType="Self.Skill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserType" EntityType="Self.UserType" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Certificate_Employee" Association="Self.FK_Certificate_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Certificate" EntitySet="Certificate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_User" Association="Self.FK_Company_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Company" EntitySet="Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_User1" Association="Self.FK_Company_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="Company" EntitySet="Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Education_Country" Association="Self.FK_Education_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Education" EntitySet="Education" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Education_Employee" Association="Self.FK_Education_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Education" EntitySet="Education" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Country" Association="Self.FK_Employee_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_CurrentJobSatus" Association="Self.FK_Employee_CurrentJobSatus">
+      <End Role="CurrentJobSatus" EntitySet="CurrentJobSatus" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_JobCategory" Association="Self.FK_Employee_JobCategory">
+      <End Role="JobCategory" EntitySet="JobCategory" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_User" Association="Self.FK_Employee_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_Company" Association="Self.FK_Event_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Event" EntitySet="Event" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_User" Association="Self.FK_Event_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Event" EntitySet="Event" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Experience_Country" Association="Self.FK_Experience_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Experience" EntitySet="Experience" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Experience_Employee" Association="Self.FK_Experience_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Experience" EntitySet="Experience" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobApply_Employee" Association="Self.FK_JobApply_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="JobApply" EntitySet="JobApply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobApply_Employee1" Association="Self.FK_JobApply_Employee1">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="JobApply" EntitySet="JobApply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobApply_JobApplyStatus" Association="Self.FK_JobApply_JobApplyStatus">
+      <End Role="JobApplyStatus" EntitySet="JobApplyStatus" />
+      <End Role="JobApply" EntitySet="JobApply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobApply_PostJob" Association="Self.FK_JobApply_PostJob">
+      <End Role="PostJob" EntitySet="PostJob" />
+      <End Role="JobApply" EntitySet="JobApply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Jobs_JobCategory" Association="Self.FK_Jobs_JobCategory">
+      <End Role="JobCategory" EntitySet="JobCategory" />
+      <End Role="Jobs" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Language_Employee" Association="Self.FK_Language_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Language" EntitySet="Language" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PostJob_Company" Association="Self.FK_PostJob_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="PostJob" EntitySet="PostJob" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PostJob_Company1" Association="Self.FK_PostJob_Company1">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="PostJob" EntitySet="PostJob" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PostJob_JobCategory" Association="Self.FK_PostJob_JobCategory">
+      <End Role="JobCategory" EntitySet="JobCategory" />
+      <End Role="PostJob" EntitySet="PostJob" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PostJob_Jobs" Association="Self.FK_PostJob_Jobs">
+      <End Role="Jobs" EntitySet="Jobs" />
+      <End Role="PostJob" EntitySet="PostJob" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PostJob_JobStatus" Association="Self.FK_PostJob_JobStatus">
+      <End Role="JobStatus" EntitySet="JobStatus" />
+      <End Role="PostJob" EntitySet="PostJob" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PostJob_User" Association="Self.FK_PostJob_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="PostJob" EntitySet="PostJob" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Skill_Employee" Association="Self.FK_Skill_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Skill" EntitySet="Skill" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_AccountStatus" Association="Self.FK_User_AccountStatus">
+      <End Role="AccountStatus" EntitySet="AccountStatus" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_UserType" Association="Self.FK_User_UserType">
+      <End Role="UserType" EntitySet="UserType" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

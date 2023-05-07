@@ -1,0 +1,12 @@
+D:\MyData\sample projects\MVC & Core Projects\OnlineJobPortal\Application\Database Layer\bin\Debug\Database Layer.dll.config
+D:\MyData\sample projects\MVC & Core Projects\OnlineJobPortal\Application\Database Layer\bin\Debug\Database Layer.dll
+D:\MyData\sample projects\MVC & Core Projects\OnlineJobPortal\Application\Database Layer\bin\Debug\Database Layer.pdb
+D:\MyData\sample projects\MVC & Core Projects\OnlineJobPortal\Application\Database Layer\bin\Debug\EntityFramework.dll
+D:\MyData\sample projects\MVC & Core Projects\OnlineJobPortal\Application\Database Layer\bin\Debug\EntityFramework.SqlServer.dll
+D:\MyData\sample projects\MVC & Core Projects\OnlineJobPortal\Application\Database Layer\bin\Debug\EntityFramework.xml
+D:\MyData\sample projects\MVC & Core Projects\OnlineJobPortal\Application\Database Layer\bin\Debug\EntityFramework.SqlServer.xml
+D:\MyData\sample projects\MVC & Core Projects\OnlineJobPortal\Application\Database Layer\obj\Debug\Database Layer.csprojAssemblyReference.cache
+D:\MyData\sample projects\MVC & Core Projects\OnlineJobPortal\Application\Database Layer\obj\Debug\Database Layer.csproj.CoreCompileInputs.cache
+D:\MyData\sample projects\MVC & Core Projects\OnlineJobPortal\Application\Database Layer\obj\Debug\Database Layer.csproj.CopyComplete
+D:\MyData\sample projects\MVC & Core Projects\OnlineJobPortal\Application\Database Layer\obj\Debug\Database Layer.dll
+D:\MyData\sample projects\MVC & Core Projects\OnlineJobPortal\Application\Database Layer\obj\Debug\Database Layer.pdb
