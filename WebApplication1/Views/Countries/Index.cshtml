@@ -7,9 +7,9 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create",null,new {@class="btn btn-default" })
 </p>
-<table class="table">
+<table class="table table-hover">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Country1)
@@ -23,9 +23,9 @@
             @Html.DisplayFor(modelItem => item.Country1)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CountryId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CountryId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CountryId })
+            @Html.ActionLink("Edit", "Edit", new { id=item.CountryId } ,new {@class="genric-btn primary" }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CountryId }, new { @class = "genric-btn info" }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CountryId }, new { @class = "genric-btn danger" })
         </td>
     </tr>
 }

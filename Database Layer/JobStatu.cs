@@ -22,6 +22,7 @@ namespace Database_Layer
     
         public int JobStatusId { get; set; }
         public string JobStatus { get; set; }
+        public string Reason { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PostJob> PostJobs { get; set; }

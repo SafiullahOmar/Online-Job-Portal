@@ -19,7 +19,6 @@ namespace Database_Layer
         {
             this.Events = new HashSet<Event>();
             this.PostJobs = new HashSet<PostJob>();
-            this.PostJobs1 = new HashSet<PostJob>();
         }
     
         public int CompanyId { get; set; }
@@ -36,7 +35,5 @@ namespace Database_Layer
         public virtual ICollection<Event> Events { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PostJob> PostJobs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PostJob> PostJobs1 { get; set; }
     }
 }

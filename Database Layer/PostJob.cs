@@ -24,24 +24,30 @@ namespace Database_Layer
         public Nullable<int> UserId { get; set; }
         public Nullable<int> CompanyId { get; set; }
         public Nullable<int> JobId { get; set; }
-        public Nullable<int> RquiredPerson { get; set; }
+        public Nullable<int> Vacancies { get; set; }
         public string Qualification { get; set; }
-        public Nullable<int> ManimumExperience { get; set; }
-        public Nullable<int> AgeLimit { get; set; }
-        public string MarriedStatus { get; set; }
+        public Nullable<System.DateTime> ApplicationLastDate { get; set; }
+        public Nullable<System.DateTime> LastDate { get; set; }
+        public Nullable<int> JobRequirementID { get; set; }
         public string StartDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
         public Nullable<System.DateTime> ShortlistDate { get; set; }
         public Nullable<System.DateTime> InterviewDate { get; set; }
         public Nullable<int> JobStatusId { get; set; }
-        public string Desctription { get; set; }
+        public string JobDesctription { get; set; }
         public Nullable<int> JobCategoryId { get; set; }
+        public string JobTitle { get; set; }
+        public Nullable<int> MinSalary { get; set; }
+        public Nullable<int> MaxSalary { get; set; }
+        public string Location { get; set; }
+        public Nullable<int> JobNatureId { get; set; }
     
         public virtual Company Company { get; set; }
-        public virtual Company Company1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<JobApply> JobApplies { get; set; }
         public virtual JobCategory JobCategory { get; set; }
+        public virtual JobNature JobNature { get; set; }
+        public virtual JobRequirement JobRequirement { get; set; }
         public virtual Job Job { get; set; }
         public virtual JobStatu JobStatu { get; set; }
         public virtual User User { get; set; }
